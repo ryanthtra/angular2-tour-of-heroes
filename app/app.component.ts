@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
+import { Hero } from './hero';
 
-export class Hero 
-{
-  id: number;
-  name: string;
-}
-
+// import { HeroDetailComponent } from './hero-detail.component';  // an RC4 implementation, now done in NgModule decorator
 
 @Component({
   selector: 'my-app',
+  // directives: [HeroDetailComponent], // an RC4 implementation, now done in NgModule decorator
   template: `
     <h1>{{title}}</h1>
     <h2>My Heroes</h2>
@@ -17,14 +14,7 @@ export class Hero
         <span class="badge">{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
-    <div *ngIf="selectedHero">
-      <h2>{{selectedHero.name}} details!</h2>
-      <div><label>id: </label>{{selectedHero.id}}</div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-      </div>
-    </div>
+    <my-hero-detail [hero]="selectedHero"></my-hero-detail>
     `,
   styles: [`
     .selected {
