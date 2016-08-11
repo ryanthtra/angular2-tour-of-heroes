@@ -4,11 +4,11 @@ import { HeroService } from './hero.service';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { HeroDetailComponent } from './hero-detail.component';  // an RC4 implementation, now done in NgModule decorator
+// import { HeroDetailComponent } from './hero-detail.component';  // an RC4 implementation, now done in NgModule decorator
 
 @Component({
   selector: 'my-heroes',
-  directives: [HeroDetailComponent], // an RC4 implementation, now done in NgModule decorator
+  // directives: [HeroDetailComponent], // an RC4 implementation, now done in NgModule decorator
   templateUrl: 'app/heroes.component.html',
   styleUrls: ['app/heroes.component.css']
 })
